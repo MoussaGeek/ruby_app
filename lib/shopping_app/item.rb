@@ -1,4 +1,7 @@
+require_relative "ownable"
+
 class Item
+  include Ownable
   attr_reader :name, :price
 
   @@instances = []
@@ -8,7 +11,7 @@ class Item
     @price = price
     self.owner = owner
 
-    # Itemインスタンスの生成時、そのItemインスタンス(self)は、@@insntancesというクラス変数に格納されます。
+    # Lors de la création d'une instance d'élément, cette instance d'élément (self) est stockée dans une variable de classe appelée @@instances.
     @@instances << self
   end
 
@@ -17,7 +20,7 @@ class Item
   end
 
   def self.all
-    #　@@instancesを返します ==> Item.allでこれまでに生成されたItemインスタンスを全て返すということです。
+    # Renvoie @@instances ==> Renvoie toutes les instances d'Item générées jusqu'à présent avec Item.all.
     @@instances
   end
 

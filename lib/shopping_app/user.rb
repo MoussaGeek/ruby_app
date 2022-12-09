@@ -9,7 +9,7 @@ class User
 
   def initialize(name)
     @name = name
-    @wallet = Wallet.new(self) # UserインスタンスまたはUserを継承したクラスのインスタンスは生成されると、自身をオーナーとするウォレットを持ちます。
+    @wallet = Wallet.new(self) # Lorsqu'une instance User ou une instance d'une classe qui hérite de User est créée, elle possède un portefeuille qui lui appartient.
   end
 
 end
